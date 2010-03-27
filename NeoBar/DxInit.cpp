@@ -192,29 +192,7 @@ static void HookFunctionArray(HookFunction *functions, int size)
 bool InitD3DHook()
 {
 
-	/*if( NULL == ( g_pD3D = Direct3DCreate9( D3D_SDK_VERSION ) ) )
-		return E_FAIL;
-
-	ZeroMemory( &g_D3Dpp, sizeof( g_D3Dpp ) );
-	g_D3Dpp.Windowed = TRUE;
-	g_D3Dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	g_D3Dpp.BackBufferFormat = D3DFMT_UNKNOWN;
-	g_D3Dpp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
-	g_D3Dpp.AutoDepthStencilFormat = D3DFMT_D16;
-	g_D3Dpp.hDeviceWindow = hwnd;
-	g_D3Dpp.EnableAutoDepthStencil = TRUE;
-
-
-	if( FAILED( g_pD3D->CreateDevice( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwnd,
-		D3DCREATE_SOFTWARE_VERTEXPROCESSING,
-		&g_D3Dpp, &g_pd3dDevice ) ) )
-	{
-		return E_FAIL;
-	}*/
-
     HookFunctionArray(d3dHooks, NUMBER_OF_D3D_HOOKS);
-
-
 	return true;
 }
 
@@ -241,11 +219,7 @@ VOID Render()
 	if( NULL == g_pd3dDevice )
 		return;
 
-	//IDirect3DDevice9_Clear( g_pd3dDevice, 0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB( 0, 0, 255 ), 1.0f, 0 );
-
 	neo.DrawNeo();
-
-	//IDirect3DDevice9_Present( g_pd3dDevice, NULL, NULL, NULL, NULL );
 }
 
 
