@@ -22,8 +22,6 @@ void NeoBar::m_CreateGUI()
 	
 	TwAddSeparator( Neo, "Seperate", NULL);
 
-	
-
 
 }
 
