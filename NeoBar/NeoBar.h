@@ -59,7 +59,7 @@ private:
 
 	//bool isActivated; 
 	TwBar *Neo;
-	LPDIRECT3DDEVICE9 p_D3D9; //DirectX9 Device. Needed to Initialize ATB
+	//LPDIRECT3DDEVICE9 p_D3D9; //DirectX9 Device. Needed to Initialize ATB
 	std::string name; //Name of TwBar
 
 public:

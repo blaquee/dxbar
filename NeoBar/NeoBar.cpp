@@ -39,13 +39,9 @@ int TW_CALL NeoBar::WndProcCallBack( void *wnd, unsigned int msg, unsigned int _
 
 bool NeoBar::InitiateNeo( TwGraphAPI mode, void* device )
 {
-	if( mode == TW_DIRECT3D9)
+	if(TwInit( mode, device))
 	{
-		if( !TwInit( mode, device) )
-		{
-			return false;
-		}
-		return true;
+        return true;
 	}
 	return false;
 }
