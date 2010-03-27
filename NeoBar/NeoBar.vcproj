@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="NeoBar"
 	ProjectGUID="{786E3237-D5EF-43AB-B0ED-138A498A2B5D}"
 	RootNamespace="NeoBar"
@@ -92,7 +92,7 @@
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
+			ConfigurationType="2"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -135,7 +135,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="d3dxof.lib dxguid.lib d3dx9.lib d3d9.lib winmm.lib"
 				ShowProgress="0"
-				OutputFile="$(SolutionDir)\Bin\$(ProjectName).exe"
+				OutputFile="$(SolutionDir)\Bin\$(ProjectName).dll"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"

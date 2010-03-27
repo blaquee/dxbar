@@ -7,11 +7,33 @@
 #pragma warning( default : 4996 )
 #include <string>
 #include <Windows.h>
-#include <AntTweakBar.h>
+#include "AntTweakBar.h"
 
 //This header file defines the class for the NeoBar Tool
 
 
+namespace SizeOfTemplate
+{
+
+    template<int n>
+    struct char_array_wrapper{
+        char result[n];
+    };
+
+    template<typename T, int s>
+    char_array_wrapper<s> the_type_of_the_variable_is_not_an_array(const T (&array)[s]){
+    }
+
+}
+
+#define SIZEOF_ARRAY(v) sizeof(SizeOfTemplate::the_type_of_the_variable_is_not_an_array(v).result)
+
+
+struct HookFunction
+{
+    PVOID original;
+    PVOID hook;
+};
 
 namespace
 {
