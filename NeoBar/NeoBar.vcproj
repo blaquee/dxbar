@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="DxBar"
 	ProjectGUID="{786E3237-D5EF-43AB-B0ED-138A498A2B5D}"
 	RootNamespace="NeoBar"
@@ -94,7 +94,7 @@
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			CharacterSet="1"
-			WholeProgramOptimization="1"
+			WholeProgramOptimization="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -115,6 +115,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				WholeProgramOptimization="false"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;CINTERFACE;TW_STATIC"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -133,14 +134,15 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="d3dxof.lib dxguid.lib d3dx9.lib d3d9.lib winmm.lib"
+				AdditionalDependencies="d3dxof.lib dxguid.lib d3dx9.lib d3d9.lib winmm.lib AntTweakBarStatic.lib"
 				ShowProgress="0"
 				OutputFile="$(SolutionDir)\Bin\$(ProjectName).dll"
 				LinkIncremental="1"
-				GenerateDebugInformation="true"
+				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="0"
 				TargetMachine="1"
 			/>
 			<Tool
