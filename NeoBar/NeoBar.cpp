@@ -59,12 +59,12 @@ void NeoBar::m_CreateGUI()
 {
 	Neo = TwNewBar( name.c_str());
 
-	TwDefine( "GLOBAL help='DxHax is presented to you by Hunter.' " );
+	TwDefine( "GLOBAL help='DxHax is presented to you by genuine/Hunter.' " );
 	TwDefine( "DxHax 1.0 text=dark");
 
 	TwType myHack = TwDefineStruct( "MyHack", myStruct, 3, sizeof( myHax ), NULL, NULL  );
 
-	TwAddButton( Neo, "Information", NULL,NULL, "label='Hunter Presents'");
+	TwAddButton( Neo, "Information", NULL,NULL, "label='genuine/Hunter Presents'");
 	TwAddButton( Neo, "Information2", NULL,NULL, "label='DxHax InGame Hack!'");
 
 	TwAddButton( Neo, "button1",NULL,NULL, "label='Button Example' group='Memory Hacks' ");
