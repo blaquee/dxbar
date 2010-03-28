@@ -47,7 +47,7 @@ namespace
 class NeoBar{
 
 public:
-	NeoBar(): name("NeoHax")
+	NeoBar(): name("DxHax")
 	{};
 
 	virtual ~NeoBar()
