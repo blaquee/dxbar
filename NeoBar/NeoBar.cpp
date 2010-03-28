@@ -5,11 +5,11 @@
 #include <Windows.h>
 #include "AntTweakBar.h"
 
-//Setting up a Hack Structure for ATB
-typedef struct Hacks
+typedef struct POSXYZ
 {
-	DWORD_PTR addr;
-	const char* name;
+	float X;
+	float Y;
+	float Z;
 }myHax;
 
 myHax elem;
@@ -17,12 +17,13 @@ myHax elem;
 
 //Set up the ATB Structure.
 TwStructMember myStruct[] = {
-	{ "address", TW_TYPE_INT32, offsetof(myHax, addr), "label=Address group=Memhacks " },
-	{ "name", TW_TYPE_CDSTRING, offsetof(myHax, name ), "label='Name of Hack' group=MemHacks"}
+	{ "X", TW_TYPE_FLOAT, offsetof(myHax, X), "" },
+	{ "Y", TW_TYPE_FLOAT, offsetof(myHax, Y), "" },
+	{ "Z", TW_TYPE_FLOAT, offsetof(myHax, Z), "" }
 };
 
-//Defines the type for the ATB struct.
-TwType myHack = TwDefineStruct( "MemHacks", myStruct, 2, sizeof( myHax ), NULL, NULL  );
+
+
 
 void NeoBar::m_CreateGUI()
 {
@@ -30,6 +31,8 @@ void NeoBar::m_CreateGUI()
 
 	TwDefine( "GLOBAL help='NeoHax is presented to you by CUG.' " );
 	TwDefine( "NeoHax 1.0 text=dark");
+
+	TwType myHack = TwDefineStruct( "MyHack", myStruct, 3, sizeof( myHax ), NULL, NULL  );
 
 	TwAddButton( Neo, "Information", NULL,NULL, "label='CUG Presents' ");
 	TwAddButton( Neo, "Information2", NULL,NULL, "label='NEOHAX InGameOMG Hack!' ");
@@ -40,7 +43,7 @@ void NeoBar::m_CreateGUI()
 	
 	TwAddSeparator( Neo, NULL, NULL);
 
-	TwAddVarRW( Neo, "Grouped Hacks", myHack, &elem, "group='Memory Hacks' " );
+	TwAddVarRW( Neo, "Player Position", myHack, &elem, "group='Memory Hacks' ");
 
 
 }
