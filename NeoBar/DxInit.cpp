@@ -227,12 +227,17 @@ bool InitD3DHook()
 	return true;
 }
 
-bool InitWindowHook(HWND hWnd)
+static bool InitWindowHook(HWND hWnd)
 {
-    g_origWndProc = GetWindowLongPtr(hWnd, GWL_WNDPROC);
-    SetWindowLongPtr(hWnd, GWL_WNDPROC, (LONG_PTR)MsgProc);
-    return true;
+	LONG_PTR tmpProc = GetWindowLongPtr(hWnd, GWL_WNDPROC);
+	if(tmpProc != (LONG_PTR)MsgProc)
+	{
+		g_origWndProc = tmpProc;
+		SetWindowLongPtr(hWnd, GWL_WNDPROC, (LONG_PTR)MsgProc);
+	}
+	return true;
 }
+
 
 
 VOID Cleanup()
